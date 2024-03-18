@@ -52,13 +52,34 @@
 </head>
 <body>
 <h2>cavallo</h2>
+<ul>
+    <?php
+    // noi con foreach andiamo ad iterarci all'interno di ogni elemento
+    foreach($hotels as $currenthotel)
+    {
+        //  facciamo una chiamata tramite echo per piportare il valore in pagina
+       echo "<li>
+       
+                <ul>";
+                // tramite li noi andiamo a "rappresentare l'elemento degli array" ma in ul noi andiamo a rappresentare gli elementi singoli all'interno dell'array
+                    // andiamo ad iterarci per ogni elemento all'interno del medesimo elemento
+                    // key e value sono praticamente il nome ed il valore dell'elemento su cui siamo
+                    foreach($currenthotel as $key => $value){
+                        // stampiamo in pagina
+                      echo " 
+                        <li>
+                          $key:". $value."
+                        </li>" ;
+                    }
+                    
+                echo"
+                </ul> 
+            </li>";
+    }
 
-<?php
+       
 
-// stampiamo un unico elemento
-echo $hotels[0]['name'];
-
-?>
-    
+    ?>
+</ul>
 </body>
 </html>
